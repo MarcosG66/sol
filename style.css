@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background: linear-gradient(#fff1ca, #ffc598) no-repeat;
+  font-family: 'Josefin Sans';
+  height: 100vh;
+  width: 100vh;
+
+}
+
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 400px;
+  margin: -200px -150px;
+  float: left;
+  perspective: 500px;
+  animation: fadeInAnimation ease 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.content .front{
+    height: inherit;
+    width: inherit;
+
+}
+
+.card.flipped .content {
+  transform: rotateY(180deg);
+  transition: transform 2s;
+}
+
+.front{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #fff1ca;
+  color: #03446A;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.zoio {
+  transform: translate(0px, 35px);
+}
+
+.back {
+  background: #e4842a;
+  color: #fff1ca;
+  transform: rotateY(180deg);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  line-height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.back img {
+  width: 300PX;
+}
+
+.back .text {
+width: 240px;
+margin-top: 30px;
+margin-bottom: -30px;
+}
